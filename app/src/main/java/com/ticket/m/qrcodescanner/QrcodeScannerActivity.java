@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.journeyapps.barcodescanner.ViewfinderView;
 
 import org.json.JSONObject;
 
@@ -22,20 +23,30 @@ private IntentIntegrator qrScan;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrcode_scanner);
+       /* getActionBar().setLogo(R.mipmap.ic_launcher_round);
+        getActionBar().setDisplayUseLogoEnabled(true);*/
         scan=findViewById(R.id.scan);
         name=findViewById(R.id.name);
         address=findViewById(R.id.address);
         qrScan=new IntentIntegrator(this);
 
 
+
+
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                qrScan.setPrompt("Enter Qr Code into the box");
+                qrScan.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                qrScan.setCameraId(0);
+                qrScan.setOrientationLocked(false);
                 qrScan.initiateScan();
+
             }
         });
 
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

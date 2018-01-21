@@ -4,32 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animationCache="false"
+    tools:actionBarNavMode="@mipmap/ic_launcher_round"
     tools:context="com.ticket.m.qrcodescanner.QrcodeScannerActivity">
 
     <TextView
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="name"
-        android:id="@+id/name"
+        android:layout_below="@id/scan"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20sp"
-        android:layout_below="@id/scan"
-        />
+        android:text="name" />
+
     <TextView
+        android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Address"
-        android:id="@+id/address"
-        android:layout_marginTop="20sp"
         android:layout_below="@id/name"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        android:text="Address" />
 
     <Button
+        android:id="@+id/scan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="20sp"
-        android:text="scan"
-        android:id="@+id/scan"
-        android:layout_centerHorizontal="true"/>
+        android:text="scan" />
 
 </RelativeLayout>
