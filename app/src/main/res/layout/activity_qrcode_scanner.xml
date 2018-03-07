@@ -66,12 +66,13 @@
         android:layout_below="@id/fair"
         android:id="@+id/bookingTime"
         android:text="Booked at: "
-        android:visibility="gone"/>
+        android:layout_marginTop="20sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/fairPrice"
         android:layout_alignRight="@id/bookingTime"
+        android:layout_marginTop="20sp"
         android:id="@+id/bookingTimeValue"/>
     <TextView
         android:layout_width="wrap_content"
@@ -85,7 +86,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/validityTime"
         android:layout_below="@id/bookingTimeValue"
-        android:layout_alignRight="@id/validity"/>
+        android:layout_alignRight="@id/validity"
+        android:layout_marginTop="20sp"/>
 
 
 

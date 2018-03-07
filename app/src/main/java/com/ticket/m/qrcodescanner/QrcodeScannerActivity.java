@@ -66,7 +66,7 @@ private IntentIntegrator qrScan;
             if(result.getContents()==null)
             {
                 Toast.makeText(this,"Result not found",Toast.LENGTH_LONG).show();
-            }//if result contains data
+            }//if result contains data then execute this
             else
             {
                 try
