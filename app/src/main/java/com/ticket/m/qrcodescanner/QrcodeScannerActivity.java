@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 public class QrcodeScannerActivity extends AppCompatActivity {
 private Button scan;
-private TextView name,address;
+private TextView source,destination,sourceName,destinationName,fair,fairPrice,bookingTime,bookingTimeValue,validity,validityTime;
 private IntentIntegrator qrScan;
 
     @Override
@@ -26,8 +26,17 @@ private IntentIntegrator qrScan;
        /* getActionBar().setLogo(R.mipmap.ic_launcher_round);
         getActionBar().setDisplayUseLogoEnabled(true);*/
         scan=findViewById(R.id.scan);
-        name=findViewById(R.id.name);
-        address=findViewById(R.id.address);
+        source=findViewById(R.id.source);
+        destination=findViewById(R.id.destination);
+        sourceName=findViewById(R.id.sourceName);
+        destinationName=findViewById(R.id.destinationName);
+        fair=findViewById(R.id.fair);
+        fairPrice=findViewById(R.id.fairPrice);
+        bookingTime=findViewById(R.id.bookingTime);
+        bookingTimeValue=findViewById(R.id.bookingTimeValue);
+        validity=findViewById(R.id.validity);
+        validityTime=findViewById(R.id.validityTime);
+
         qrScan=new IntentIntegrator(this);
 
 
@@ -63,8 +72,14 @@ private IntentIntegrator qrScan;
                 try
                 {
                     JSONObject obj=new JSONObject(result.getContents());
-                    name.setText(obj.getString("name"));
-                    address.setText(obj.getString("address"));
+                    source.setVisibility(View.VISIBLE);
+                    destination.setVisibility(View.VISIBLE);
+                    fair.setVisibility(View.VISIBLE);
+                    sourceName.setText(obj.getString("sourceStation"));
+                    destinationName.setText(obj.getString("destinationStation"));
+                    fairPrice.setText(obj.getString("fair"));
+                    bookingTime.setText(obj.getString("bookingTime"));
+                    validity.setText(obj.getString("expiry_time"));
                 }
                 catch(Exception e)
                 {
